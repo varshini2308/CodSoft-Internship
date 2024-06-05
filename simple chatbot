@@ -1,0 +1,27 @@
+data = {
+    "hi": "Hello! How can I assist you today?",
+    "hello": "Hi there! How can I help you?",
+    "what is your name": "I'm your friendly assistant, ChatBot.",
+    "where are you from": "I reside in the cloud, always ready to assist!",
+    "how are you": "I'm functioning perfectly, thank you!",
+    "do you have any hobbies or interests?": "I enjoy interacting with users and learning new things.",
+    "what did you eat today?": "I don't eat, but I'm interested in hearing about your meals!",
+    "what's your favorite color?": "I don't have a preference, but I think all colors are fascinating!",
+    "do you enjoy listening to music?": "I don't listen to music, but I can suggest some popular tunes!",
+    "bye": "Goodbye! Take care and feel free to come back anytime!"
+}
+
+def get_response(user_input):
+    for pattern, response in data.items():
+        if pattern in user_input.lower():
+            return response
+    return "I'm sorry, I didn't understand that. Can you please rephrase your sentence?"
+
+print("Chatbot: Hey! I'm a simple chatbot, I'm here to assist you!")
+while True:
+    user_input = input("Me: ")
+    if user_input.lower() == 'bye':
+        print("Chatbot: Goodbye! Have a woderful day ahead!")
+        break
+    response = get_response(user_input)
+    print("Chatbot:", response)
